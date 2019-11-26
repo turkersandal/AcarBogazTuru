@@ -1,0 +1,109 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css"/> 
+<meta charset="utf-8">
+<title>Acar Boğaz Turu</title>
+<link rel="icon" type="image/gif" href="capa.png" />
+</head>
+
+<body>
+
+    <div class="banner"  >
+        <center>
+        <a href="index.html"><img src="header.png"></a>
+        </div>
+        </center>
+        <!--navbar başlangıç-->
+        <div id="header" style="margin:auto" >
+          <div class="menu">
+          <ul>
+          <li><a href="index.html">Anasayfa</a></li>
+          <li><a href="organizasyonlar.html">Organizasyonlar</a></li>
+          <li><a href="tekneler.html">Kiralık Tekneler</a></li>
+          <li><a href="yatlar.html">Kiralık Yatlar</a></li>
+          <li><a href="hizmetler.html">Hizmetler ve Menüler</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+          <li><a href="gorseller.html">Görseller</a></li>
+          </ul>
+          </div>
+          </div>
+          <!--navbar bitiş-->
+<!--main başlangıç-->
+<div id="main_gor" style="margin:auto"> 
+<a href="index.html"></a>
+<h1 class="gorsel"><center>GÖRSELLER</center></h1>
+<!--slider başlangıç-->
+<div id="container" style="margin:auto">
+    <img class="slider" src="b.jpg">
+    <img class="slider" src="a.jpg">
+    <img class="slider" src="c.jpg">
+    <img class="slider" src="d.jpg">
+    <img class="slider" src="e.jpg">
+    <img class="slider" src="f.jpg">
+    <button class="btn" onClick="plusIndex(-1)" id="btn1">&#10094;</button>
+    <button class="btn" onClick="plusIndex(1)" id="btn2">&#10095;</button>
+    </div>
+    <!--slider bitiş-->
+
+
+
+</div>
+<!--main bitiş-->
+<!--footer başlangıç-->
+<div id="footer" style="margin:auto">
+Tüm Hakları Saklıdır &copy 2017 Developed by<a href="https://www.facebook.com/trkr37"> Türker SANDAL</a>
+<div class="taglar">
+<a href="https://www.instagram.com/acarbogazturuu/?hl=tr"><img src="insta.jpg" style="border-radius:10px"></a>
+<a href="#"><img src="google.jpg" style="border-radius:10px"></a>
+ <a href="https://www.facebook.com/Acarbogazturu-500858503634514/?notif_id=1508518198071343&notif_t=fbpage_fan_invite"><img src="face.jpg" style="border-radius:10px">
+</a></div>
+</div>
+
+<!--footer bitiş-->
+
+</body>
+<script>
+    var index=1;
+    
+    function plusIndex(n){
+    index+=1;
+    showImage(index);
+    
+    }
+    showImage(1);
+    
+    
+    
+    function showImage(n){
+    var i;
+    var x = document.getElementsByClassName("slider");
+    
+    if(n>x.length){index=1;}
+    if(n<1){index=x.length;}
+    
+    for(i=0;i<x.length;i++){x[i].style.display="none";}
+    
+    
+    
+    x[index-1].style.display="block";
+    
+    }
+    
+    function autoSlide(){
+    
+    var i;
+    var x = document.getElementsByClassName("slider");
+    
+    for(i=0;i<x.length;i++){x[i].style.display="none";}
+    
+    if(index > x.length){index=1;}
+    x[index-1].style.display = "block";
+    index++;
+    setTimeout(autoSlide,4000);
+    
+    }
+    autoSlide();
+    
+    </script>
+
+</html>
